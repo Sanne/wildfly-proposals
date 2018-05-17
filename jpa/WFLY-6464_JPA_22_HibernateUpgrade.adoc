@@ -34,6 +34,19 @@ A working proof of concept can be found here:
 
  - https://github.com/dmlloyd/wildfly/commit/hib-xform
 
+_Compatibility Transformer_ isn't enabled by default. It needs to be enabled in deployment descriptor `jboss-deployment-structure.xml` for each deployment.
+[source,xml]
+----
+<jboss-deployment-structure>
+    <deployment>
+        <transformers>
+            <transformer
+                class="org.jboss.as.jpa.Hibernate51CompatibilityTransformer" />
+        </transformers>
+    </deployment>
+</jboss-deployment-structure>
+----
+
 
 == Issue Metadata
 
